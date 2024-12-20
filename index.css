@@ -46,6 +46,7 @@ p {
 }
 
 button {
+    box-shadow: 2px 1px 1px rgb(255, 255, 255);
     padding: 10px 20px;
     background-color: #007BFF;
     color: white;
@@ -59,7 +60,7 @@ button:hover {
 
 /* Estilos para las imágenes */
 .pic {
-    box-shadow: 5px 4px 8px rgb(255, 240, 240);
+    /* box-shadow: 5px 5px 8px rgb(255, 240, 240); */
     margin-right: 2rem;
     display: block;
     margin-left: auto;
@@ -110,6 +111,7 @@ margin-right: 2rem;
     font-size: 44px;
     color: #ffffff;
     font-family: 'Great Vibes', cursive;
+    margin-bottom: 3rem;
 }
 
 .title-2 {
@@ -315,7 +317,7 @@ li {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    width: 300px;
+    width: 20rem;
     text-align: center;
     background-color: #435f26;
 }
@@ -502,3 +504,175 @@ nav li {
     }
 }
 
+.text-content {
+    margin-top: -9rem;
+  }
+  
+  .christmas-card {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    text-align: left;
+    padding: 20px;
+    margin: 0 auto; /* Centra la tarjeta */
+  }
+  
+  /* Para pantallas pequeñas (móviles) */
+  @media (max-width: 480px) {
+    .christmas-card {
+      width: 90%; /* Usa un ancho flexible */
+      padding: 15px;
+    }
+  
+    .card-title {
+      font-size: 1.4rem;
+    }
+  
+    .card-message {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+  
+    .card-signature {
+      font-size: 0.8rem;
+    }
+  
+    .text-content {
+      margin-top: -6rem; /* Ajusta el margen */
+    }
+  }
+  
+  /* Para pantallas medianas (tabletas) */
+  @media (max-width: 768px) {
+    .christmas-card {
+      width: 80%;
+      padding: 20px;
+    }
+  
+    .card-title {
+      font-size: 1.5rem;
+    }
+  
+    .card-message {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+  
+  /* Para pantallas grandes (escritorio) */
+  @media (min-width: 769px) {
+    .christmas-card {
+      width: 400px; /* Un poco más grande para escritorio */
+    }
+  
+    .card-title {
+      font-size: 1.8rem;
+    }
+  
+    .card-message {
+      font-size: 1rem;
+    }
+  
+    .card-signature {
+      font-size: 0.9rem;
+    }
+  
+    .text-content {
+      margin-top: -9rem;
+    }
+  }
+
+  /* Contenedor principal */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre la imagen y el texto */
+    margin: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+}
+
+/* Contenedor de la imagen */
+.gif-content-1 {
+    flex-shrink: 0; /* Evita que la imagen se reduzca demasiado */
+}
+
+/* Ajustar la imagen */
+.gif-content-1 .pic {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Opcional: agrega bordes redondeados */
+}
+
+/* Contenedor del texto */
+.text-content {
+    flex: 1; /* Permite que el texto ocupe el espacio restante */
+    min-width: 250px; /* Evita que el texto se reduzca demasiado en pantallas pequeñas */
+}
+
+/* Estilo de la tarjeta */
+.christmas-card {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+}
+
+/* Estilo del mensaje */
+.card-message {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Estilo de la firma */
+.card-signature {
+    font-size: 0.9rem;
+    color: #333333;
+    text-align: right;
+    font-style: italic;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Apila la imagen y el texto en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+        gap: 15px; /* Espacio reducido entre la imagen y el texto */
+    }
+
+    .gif-content-1 .pic {
+        width: 80px; /* Reducir el tamaño de la imagen en pantallas pequeñas */
+    }
+
+    .text-content {
+        min-width: 100%; /* Permite que el texto ocupe el ancho completo en pantallas pequeñas */
+    }
+
+    .card-message {
+        font-size: 0.9rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+
+    .card-signature {
+        font-size: 0.8rem; /* Reduce la firma en pantallas pequeñas */
+    }
+}
+
+/* Media Queries para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+    .gif-content-1 .pic {
+        width: 70px; /* Aumenta la reducción de la imagen en móviles */
+    }
+
+    .card-message {
+        font-size: 0.8rem; /* Reducción aún mayor del tamaño del texto */
+    }
+
+    .card-signature {
+        font-size: 0.7rem; /* Reducción de la firma */
+    }
+}
