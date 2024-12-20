@@ -321,11 +321,16 @@ function checkMeta() {
         currentRow = initialRow;
         currentCol = initialCol;
         moveSanta();
-        alert("¡Oh, no!\nSanta ha sido capturado!");
+        Swal.fire({
+  icon: "error",
+  title: "Oops...",
+  text: "¡Oh no! \n ¡Santa ha sido atrapado!",
+  
+});
     }
 }
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
