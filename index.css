@@ -10,8 +10,14 @@ body {
     overflow-x: hidden; /* Evita el desbordamiento horizontal */
     overflow-y: auto; /* Permite el desbordamiento vertical solo cuando es necesario */
     width: 100%; /* Asegura que el ancho no se desborde */
-    height: 100vh; /* Asegura que el alto no se desborde */
+    height: 100%; /* Asegura que el alto no se desborde */
     box-sizing: border-box; /* Asegura que los bordes y el padding se incluyan en las medidas de tamaño */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit; /* Asegura que todos los elementos utilicen el mismo box-sizing */
 }
 
 .container {
@@ -19,7 +25,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    box-sizing: border-box; /* Para asegurarse de que el padding no cause desbordamiento */
+    box-sizing: border-box;
 }
 
 header {
@@ -58,8 +64,8 @@ button:hover {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%; /* Ajusta el tamaño dinámicamente */
-    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 100%;
+    height: auto;
 }
 
 .pic-2 {
@@ -98,7 +104,6 @@ button:hover {
     align-items: center;
 }
 
-/* Estilos para el título */
 .title {
     text-align: center;
     font-size: 44px;
@@ -115,7 +120,6 @@ button:hover {
     margin-top: 5rem;
 }
 
-/* Estilos para los mensajes */
 .message {
     font-size: 1rem;
     font-family: 'Merriweather', serif;
@@ -133,6 +137,11 @@ footer {
     position: relative;
     width: 100%;
     bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
 }
 
 /* Solución para el solapamiento del footer */
@@ -186,7 +195,7 @@ li {
     }
 
     nav {
-        flex-direction: column; /* Cambia la dirección a columna */
+        flex-direction: column;
         align-items: center;
     }
 
@@ -214,7 +223,7 @@ li {
     }
 
     nav {
-        flex-direction: column; /* Cambia la dirección a columna */
+        flex-direction: column;
         align-items: center;
     }
 
@@ -227,9 +236,8 @@ li {
         margin: 5px 0;
     }
 
-    /* Evitar desbordamiento en dispositivos más pequeños */
     body {
-        padding-bottom: 0; /* Elimina el padding extra en la parte inferior */
+        padding-bottom: 0;
         overflow-x: hidden; /* Evita el desbordamiento horizontal */
     }
 }
@@ -248,7 +256,7 @@ li {
     }
 
     nav {
-        flex-direction: column; /* Asegura que el menú esté apilado */
+        flex-direction: column;
         align-items: center;
     }
 
@@ -261,7 +269,6 @@ li {
         margin: 5px 0;
     }
 
-    /* Evitar desbordamiento en dispositivos más pequeños */
     body {
         overflow-x: hidden; /* Evita el desbordamiento horizontal */
     }
@@ -284,7 +291,6 @@ li {
     background-color: #435f26;
 }
 
-/* Fondo oscuro cuando el modal está visible */
 #fondoOscuro {
     display: none;
     position: fixed;
@@ -301,8 +307,8 @@ table {
     width: 100%;
     margin-top: 10px;
     border-collapse: collapse;
-    max-width: 100%; /* Asegura que la tabla no se desborde */
-    table-layout: fixed; /* Asegura que la tabla tenga un diseño más consistente */
+    max-width: 100%;
+    table-layout: fixed;
 }
 
 th,
@@ -323,13 +329,11 @@ td:hover {
     background-color: #f0f0f0;
 }
 
-/* Estilo especial para los días 24 y 25 de diciembre (rojo) */
 td.dia-festivo {
     background-color: #469b14;
     color: white;
 }
 
-/* Estilo para el día actual */
 td.dia-actual {
     background-color: #054103;
     color: black;
@@ -350,7 +354,6 @@ button:hover {
     background-color: #86cfbf;
 }
 
-/* Contenedor del menú */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -360,13 +363,11 @@ nav ul {
     align-items: center;
 }
 
-/* Estilo de los elementos de menú */
 nav li {
     position: relative;
     margin: 0 10px;
 }
 
-/* Ocultar el submenú por defecto */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -379,7 +380,6 @@ nav li {
     border-radius: 5px;
 }
 
-/* Estilo para los elementos dentro del submenú */
 .dropdown-content li {
     padding: 8px 12px;
 }
@@ -394,7 +394,7 @@ nav li {
 }
 
 .section {
-    height: 66%;
+    height: 100%;
     margin: 10%;
     background-color: #353432;
     padding: 2rem;
@@ -407,21 +407,19 @@ nav li {
     background-color: #4e4d4a;
 }
 
-/* Estilos para las filas de la tabla */
 .tr {
-    background-color: #f8f8f8; /* Color de fondo para las filas */
-    border-bottom: 1px solid #ddd; /* Línea de separación entre las filas */
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
 }
 
 .tr:hover {
-    background-color: #f1f1f1; /* Cambio de color al pasar el ratón */
+    background-color: #f1f1f1;
 }
 
 .tr:nth-child(even) {
-    background-color: #f9f9f9; /* Fondo para filas pares */
+    background-color: #f9f9f9;
 }
 
-/* Cambio de color al pasar el ratón sobre la fila */
 .tr:hover {
     background-color: #f1f1f1;
 }
@@ -439,10 +437,10 @@ nav li {
 .gif-content {
     position: relative;
     width: 100%;
-    height:100%;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 100%;
+    padding-bottom: 56.25%;
     overflow: hidden;
-    background-color: #000; /* Fondo negro para asegurar que no haya espacio vacío */
+    background-color: #000;
 }
 
 .responsive-video {
@@ -451,10 +449,9 @@ nav li {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Asegura que el video se ajuste sin ser recortado */
+    object-fit: contain;
 }
 
-/* Media Query para dispositivos más pequeños (como teléfonos móviles) */
 @media screen and (max-width: 768px) {
     .responsive-video {
         width: 100%;
@@ -462,7 +459,6 @@ nav li {
     }
 }
 
-/* Media Query para dispositivos más grandes (como tablets) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .responsive-video {
         width: 100%;
@@ -470,7 +466,6 @@ nav li {
     }
 }
 
-/* Media Query para pantallas más grandes (como escritorios) */
 @media screen and (min-width: 1025px) {
     .responsive-video {
         width: 100%;
