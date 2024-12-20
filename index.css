@@ -2,10 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
+/* Estilo base: Aplicado a todas las pantallas */
 body {
     margin: 0;
     padding: 0;
     background-color: #b93636;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    overflow-y: auto; /* Permite el desbordamiento vertical solo cuando es necesario */
+    width: 100%; /* Asegura que el ancho no se desborde */
+    height: 100vh; /* Asegura que el alto no se desborde */
+    box-sizing: border-box; /* Asegura que los bordes y el padding se incluyan en las medidas de tamaño */
 }
 
 .container {
@@ -13,6 +19,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box; /* Para asegurarse de que el padding no cause desbordamiento */
 }
 
 header {
@@ -72,7 +79,7 @@ button:hover {
 }
 
 .pic-5 {
-    width: 2rem;
+    width: 4rem;
 }
 
 .grl3 {
@@ -118,13 +125,19 @@ button:hover {
 
 /* Estilos para el footer */
 footer {
+    margin-top: 2rem;
     background-color: #333;
     color: white;
     text-align: left;
     padding: 20px;
-    position: fixed;
-    bottom: 0;
+    position: relative;
     width: 100%;
+    bottom: 0;
+}
+
+/* Solución para el solapamiento del footer */
+body {
+    padding-bottom: 80px; /* Evita que el footer se superponga */
 }
 
 footer p {
@@ -171,6 +184,20 @@ li {
     .message {
         font-size: 0.9rem;
     }
+
+    nav {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -199,6 +226,12 @@ li {
     nav li {
         margin: 5px 0;
     }
+
+    /* Evitar desbordamiento en dispositivos más pequeños */
+    body {
+        padding-bottom: 0; /* Elimina el padding extra en la parte inferior */
+        overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -226,6 +259,11 @@ li {
 
     nav li {
         margin: 5px 0;
+    }
+
+    /* Evitar desbordamiento en dispositivos más pequeños */
+    body {
+        overflow-x: hidden; /* Evita el desbordamiento horizontal */
     }
 }
 
@@ -356,7 +394,7 @@ nav li {
 }
 
 .section {
-    height: 100%;
+    height: 66%;
     margin: 10%;
     background-color: #353432;
     padding: 2rem;
@@ -389,12 +427,53 @@ nav li {
 }
 
 .tr td {
-    padding: 10px;
+    padding: 2px;
     text-align: center;
 }
 
 .tr img {
     max-width: 100%;
-    height: auto;
+    height: 3rem;
 }
 
+.gif-content {
+    position: relative;
+    width: 100%;
+    height:100%;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    overflow: hidden;
+    background-color: #000; /* Fondo negro para asegurar que no haya espacio vacío */
+}
+
+.responsive-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que el video se ajuste sin ser recortado */
+}
+
+/* Media Query para dispositivos más pequeños (como teléfonos móviles) */
+@media screen and (max-width: 768px) {
+    .responsive-video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Media Query para dispositivos más grandes (como tablets) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .responsive-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Media Query para pantallas más grandes (como escritorios) */
+@media screen and (min-width: 1025px) {
+    .responsive-video {
+        width: 100%;
+        height: auto;
+    }
+}
