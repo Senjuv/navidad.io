@@ -48,44 +48,53 @@ button:hover {
 .pic {
     box-shadow: 5px 4px 8px rgb(255, 240, 240);
     margin-right: 2rem;
-    display: block; /* Centra la imagen */
-    margin-left: auto; /* Centra la imagen */
-    margin-right: auto; /* Centra la imagen */
-    max-width: 300px; /* Ajusta el tamaño de la imagen */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; /* Ajusta el tamaño dinámicamente */
     height: auto; /* Mantiene la proporción de la imagen */
 }
 
 .pic-2 {
-    width: 10%; /* Ajusta el tamaño de la imagen */
-    margin: 0; /* Quita márgenes adicionales */
+    width: 10%;
+    margin: 0;
 }
 
-
-
 .pic-3 {
-    width: 100%; /* Ajusta el tamaño al 50% del contenedor */
-    grid-column: 2; /* Coloca la imagen en la columna 2 */
+    width: 100%;
+    grid-column: 2;
 }
 
 .pic-4 {
-    width: 20%; /* Ajusta el tamaño al 50% del contenedor */
+    width: 20%;
     grid-column: 2;
-    margin-left: 40%; /* Coloca la imagen en la columna 2 */
+    margin-left: 40%;
 }
 
+.pic-5 {
+    width: 2rem;
+}
 
 .grl3 {
-    display: grid; /* Configura este contenedor como una cuadrícula */
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
-    gap: 10px; /* Espaciado entre los elementos */
-    justify-items: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
 }
+
+.grl4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    justify-items: center;
+    align-items: center;
+}
+
 /* Estilos para el título */
 .title {
     text-align: center;
     font-size: 44px;
-    /* O cualquier valor equivalente */
     color: #ffffff;
     font-family: 'Great Vibes', cursive;
 }
@@ -93,7 +102,6 @@ button:hover {
 .title-2 {
     text-align: center;
     font-size: 2rem;
-    /* O cualquier valor equivalente */
     color: #ffffff;
     font-family: 'Merriweather', serif;
     margin-bottom: 5rem;
@@ -111,41 +119,34 @@ button:hover {
 /* Estilos para el footer */
 footer {
     background-color: #333;
-    /* Fondo oscuro */
     color: white;
-    /* Texto blanco */
     text-align: left;
-    /* Centra el texto */
     padding: 20px;
-    /* Espaciado alrededor del contenido */
     position: fixed;
-    /* Hace que el pie de página esté fijo en la parte inferior */
     bottom: 0;
     width: 100%;
 }
 
 footer p {
     margin: 0;
-    /* Elimina márgenes extra */
     font-size: 1rem;
 }
 
 /* Estilo para el menú */
 nav {
-    display: flex; /* Activa Flexbox */
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: start; /* Alinea el contenido al inicio (puedes cambiar según necesidad) */
-    background-color: #7db85b; /* Opcional: fondo para visualizar el navbar */
-    height: 80px; /* Asegúrate de que el navbar tenga suficiente altura */
-    padding: 0 1rem; /* Espaciado interno opcional */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #7db85b;
+    height: 80px;
+    padding: 0 1rem;
 }
 
-
 ul {
-    list-style: none; /* Quita los estilos de lista */
-    margin: 0; /* Quita márgenes */
-    padding: 0; /* Quita relleno */
-    align-items: center; /* Centra los elementos verticalmente dentro del ul */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
 nav a {
@@ -184,6 +185,20 @@ li {
     .message {
         font-size: 0.8rem;
     }
+
+    nav {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -198,8 +213,21 @@ li {
     .message {
         font-size: 0.7rem;
     }
-}
 
+    nav {
+        flex-direction: column; /* Asegura que el menú esté apilado */
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+}
 
 /* Estilos para el modal del calendario */
 #calendario {
@@ -213,11 +241,9 @@ li {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    /* Asegura que el calendario esté encima de otros elementos */
     width: 300px;
     text-align: center;
     background-color: #435f26;
-    /* Fondo verde para el calendario */
 }
 
 /* Fondo oscuro cuando el modal está visible */
@@ -237,12 +263,13 @@ table {
     width: 100%;
     margin-top: 10px;
     border-collapse: collapse;
+    max-width: 100%; /* Asegura que la tabla no se desborde */
+    table-layout: fixed; /* Asegura que la tabla tenga un diseño más consistente */
 }
 
 th,
 td {
     width: 14.28%;
-    /* 7 días en la semana */
     text-align: center;
     padding: 8px;
     border: 1px solid #ddd;
@@ -251,7 +278,6 @@ td {
 td {
     cursor: pointer;
     background-color: #800080;
-    /* Fondo morado para todos los días */
     color: white;
 }
 
@@ -262,14 +288,12 @@ td:hover {
 /* Estilo especial para los días 24 y 25 de diciembre (rojo) */
 td.dia-festivo {
     background-color: #469b14;
-    /* Color de fondo para los días 24 y 25 */
     color: white;
 }
 
 /* Estilo para el día actual */
 td.dia-actual {
     background-color: #054103;
-    /* Color de fondo dorado para el día actual */
     color: black;
     font-weight: bold;
 }
@@ -277,7 +301,7 @@ td.dia-actual {
 button {
     margin-top: 5px;
     padding: 10px 15px;
-    background-color: #007BFF;
+    background-color: #070707;
     color: white;
     border: none;
     border-radius: 5px;
@@ -285,10 +309,8 @@ button {
 }
 
 button:hover {
-    margin-top: 5px;
     background-color: #86cfbf;
 }
-
 
 /* Contenedor del menú */
 nav ul {
@@ -302,7 +324,7 @@ nav ul {
 
 /* Estilo de los elementos de menú */
 nav li {
-    position: relative; /* Necesario para el menú desplegable */
+    position: relative;
     margin: 0 10px;
 }
 
@@ -312,9 +334,9 @@ nav li {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #435f26; /* Fondo verde */
+    background-color: #435f26;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 80px; /* Ancho mínimo para el submenú */
+    min-width: 80px;
     padding: 10px;
     border-radius: 5px;
 }
@@ -330,6 +352,49 @@ nav li {
 }
 
 .dropdown-content li a:hover {
-    background-color: #800080; /* Fondo morado cuando se pasa el ratón */
+    background-color: #800080;
+}
+
+.section {
+    height: 100%;
+    margin: 10%;
+    background-color: #353432;
+    padding: 2rem;
+}
+
+.th-5 {
+    margin: 2rem;
+    gap: 2rem;
+    height: 30px;
+    background-color: #4e4d4a;
+}
+
+/* Estilos para las filas de la tabla */
+.tr {
+    background-color: #f8f8f8; /* Color de fondo para las filas */
+    border-bottom: 1px solid #ddd; /* Línea de separación entre las filas */
+}
+
+.tr:hover {
+    background-color: #f1f1f1; /* Cambio de color al pasar el ratón */
+}
+
+.tr:nth-child(even) {
+    background-color: #f9f9f9; /* Fondo para filas pares */
+}
+
+/* Cambio de color al pasar el ratón sobre la fila */
+.tr:hover {
+    background-color: #f1f1f1;
+}
+
+.tr td {
+    padding: 10px;
+    text-align: center;
+}
+
+.tr img {
+    max-width: 100%;
+    height: auto;
 }
 
