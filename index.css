@@ -60,7 +60,6 @@ button:hover {
 
 /* Estilos para las imágenes */
 .pic {
-    /* box-shadow: 5px 5px 8px rgb(255, 240, 240); */
     margin-right: 2rem;
     display: block;
     margin-left: auto;
@@ -103,7 +102,7 @@ button:hover {
     gap: 5px;
     justify-items: center;
     align-items: center;
-margin-right: 2rem;
+    margin-right: 2rem;
 }
 
 .title {
@@ -158,6 +157,7 @@ margin-right: 2rem;
         padding: 0.8rem;
     }
 }
+
 /* Estilos para el footer */
 footer {
     margin-top: 2rem;
@@ -193,6 +193,7 @@ nav {
     background-color: #7db85b;
     height: 80px;
     padding: 0 1rem;
+    flex-wrap: wrap; /* Permite que el menú se ajuste en pantallas pequeñas */
 }
 
 ul {
@@ -317,7 +318,8 @@ li {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    width: 20rem;
+    width: 90%; /* Ajuste al 90% del ancho disponible */
+    max-width: 500px; /* Limita el ancho máximo */
     text-align: center;
     background-color: rgb(217 216 216);
 }
@@ -364,11 +366,10 @@ td:hover {
 td.dia-festivo {
     background-color: #ffffff;
     color: #ff00f5;
-    
 }
 
 td.dia-actual {
-    background-color:black;
+    background-color: black;
     color: white;
     font-weight: bold;
     border-radius: 50%;
@@ -474,7 +475,6 @@ nav li {
     height: 100%;
     padding-bottom: 56.25%;
     overflow: hidden;
-    /* background-color: #000; */
 }
 
 .responsive-video {
@@ -483,13 +483,13 @@ nav li {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
     .responsive-video {
         width: 100%;
-        height: 100%;
+        height: auto;
     }
 }
 
