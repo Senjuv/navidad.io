@@ -10,7 +10,10 @@
    
 </head>
 
-<body> 
+<body>
+    <div id="loading">
+        <img src="/media/icegif-1258.gif" alt="Cargando...">
+    </div>
     <nav>
         <ul class="menu">
             <li class="dropdown">
@@ -158,14 +161,16 @@
 <audio id="audioNormal" src="/media/videoplayback.m4a"></audio>
 
 <script>
-    // Función para alternar la visibilidad del submenú
-    function toggleMenu() {
-        const subMenu = document.querySelector('.dropdown-content');
-        subMenu.style.display = subMenu.style.display === 'block' ? 'none' : 'block';
-    }
-
-    // Mostrar el calendario
+     // Ocultar el GIF de carga cuando la página ha terminado de cargarse
+     window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+            }, 1000); // Esperar al menos 1 segundo
+        });
+    // Ejemplo de uso: mostrar el GIF de carga al mostrar el calendario
     function mostrarCalendario() {
+        mostrarLoading(); // Mostrar el GIF de carga
+
         const calendarioDiv = document.getElementById('calendario');
         const fondoOscuro = document.getElementById('fondoOscuro');
         const fechaCalendario = document.getElementById('fechaCalendario');
@@ -186,7 +191,10 @@
         // Generar el calendario
         generarCalendario(año, mes, dia);
 
-        // No se reproduce la música al abrir el calendario
+        // Reproducir audio según la fecha
+        reproducirAudio(dia, mes + 1);
+
+        ocultarLoading(); // Ocultar el GIF de carga
     }
 
     function generarCalendario(año, mes, diaActual) {
