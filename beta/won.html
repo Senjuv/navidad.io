@@ -80,36 +80,37 @@
             }, 1000); // Esperar al menos 1 segundo
         });
 
-    
-        // Ejemplo de uso: mostrar el GIF de carga al mostrar el calendario
+      // Función para alternar la visibilidad del submenú
+      function toggleMenu() {
+            const subMenu = document.querySelector('.dropdown-content');
+            subMenu.style.display = subMenu.style.display === 'block' ? 'none' : 'block';
+        }
+        // Mostrar el calendario
         function mostrarCalendario() {
-            mostrarLoading(); // Mostrar el GIF de carga
-    
             const calendarioDiv = document.getElementById('calendario');
             const fondoOscuro = document.getElementById('fondoOscuro');
             const fechaCalendario = document.getElementById('fechaCalendario');
-    
+
             // Mostrar el calendario y el fondo oscuro
             calendarioDiv.style.display = 'block';
             fondoOscuro.style.display = 'block';
-    
+
             // Obtener la fecha actual
             const fecha = new Date();
             const dia = fecha.getDate();
             const mes = fecha.getMonth(); // Mes 0-11
             const año = fecha.getFullYear();
-    
+
             // Establecer el título con la fecha actual
             fechaCalendario.innerHTML = `<h3>Calendario: ${dia}/${mes + 1}/${año}</h3>`;
-    
+
             // Generar el calendario
             generarCalendario(año, mes, dia);
-    
+
             // Reproducir audio según la fecha
             reproducirAudio(dia, mes + 1);
-    
-            ocultarLoading(); // Ocultar el GIF de carga
         }
+
         function generarCalendario(año, mes, diaActual) {
             const diasDelMes = new Date(año, mes + 1, 0).getDate();
             const primerDiaDelMes = new Date(año, mes, 1).getDay();

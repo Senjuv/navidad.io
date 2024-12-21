@@ -58,6 +58,20 @@ button:hover {
     background-color: #0056b3;
 }
 
+.button-alert {
+    margin-bottom: 4rem;
+    box-shadow: 2px 1px 1px rgb(255, 255, 255);
+    padding: 10px 20px;
+    background-color: #050505;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
 /* Estilos para las imágenes */
 .pic {
     /* box-shadow: 5px 5px 8px rgb(255, 240, 240); */

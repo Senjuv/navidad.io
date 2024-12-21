@@ -17,8 +17,7 @@
     <nav>
         <ul class="menu">
             <li class="dropdown">
-                <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png"
-                        alt="Menú"></a> <!-- Al hacer clic se despliega el submenú -->
+                <a href="#" onclick="toggleMenu()"><img  class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a> <!-- Al hacer clic se despliega el submenú -->
                 <ul class="dropdown-content">
                     <li>
                         <a href="#" onclick="mostrarCalendario()">
@@ -26,7 +25,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/beta/index.html">
                             <img class="pic-2" src="/media/carta.png" alt="carta">
                         </a>
                     </li>
@@ -167,100 +166,109 @@
                 document.getElementById('loading').style.display = 'none';
             }, 1000); // Esperar al menos 1 segundo
         });
-    // Ejemplo de uso: mostrar el GIF de carga al mostrar el calendario
-    function mostrarCalendario() {
-        mostrarLoading(); // Mostrar el GIF de carga
+          // Función para alternar la visibilidad del submenú
+          function toggleMenu() {
+            const subMenu = document.querySelector('.dropdown-content');
+            subMenu.style.display = subMenu.style.display === 'block' ? 'none' : 'block';
+        }
+   // Mostrar el calendario
+   function mostrarCalendario() {
+            const calendarioDiv = document.getElementById('calendario');
+            const fondoOscuro = document.getElementById('fondoOscuro');
+            const fechaCalendario = document.getElementById('fechaCalendario');
 
-        const calendarioDiv = document.getElementById('calendario');
-        const fondoOscuro = document.getElementById('fondoOscuro');
-        const fechaCalendario = document.getElementById('fechaCalendario');
+            // Mostrar el calendario y el fondo oscuro
+            calendarioDiv.style.display = 'block';
+            fondoOscuro.style.display = 'block';
 
-        // Mostrar el calendario y el fondo oscuro
-        calendarioDiv.style.display = 'block';
-        fondoOscuro.style.display = 'block';
+            // Obtener la fecha actual
+            const fecha = new Date();
+            const dia = fecha.getDate();
+            const mes = fecha.getMonth(); // Mes 0-11
+            const año = fecha.getFullYear();
 
-        // Obtener la fecha actual
-        const fecha = new Date();
-        const dia = fecha.getDate();
-        const mes = fecha.getMonth(); // Mes 0-11
-        const año = fecha.getFullYear();
+            // Establecer el título con la fecha actual
+            fechaCalendario.innerHTML = `<h3>Calendario: ${dia}/${mes + 1}/${año}</h3>`;
 
-        // Establecer el título con la fecha actual
-        fechaCalendario.innerHTML = `<h3>Calendario: ${dia}/${mes + 1}/${año}</h3>`;
+            // Generar el calendario
+            generarCalendario(año, mes, dia);
 
-        // Generar el calendario
-        generarCalendario(año, mes, dia);
-
-        // Reproducir audio según la fecha
-        reproducirAudio(dia, mes + 1);
-
-        ocultarLoading(); // Ocultar el GIF de carga
-    }
-
-    function generarCalendario(año, mes, diaActual) {
-        const diasDelMes = new Date(año, mes + 1, 0).getDate();
-        const primerDiaDelMes = new Date(año, mes, 1).getDay();
-
-        let calendarioHTML = '<table>';
-        calendarioHTML += '<tr>';
-
-        // Nombre de los días
-        const diasSemana = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
-        for (let dia of diasSemana) {
-            calendarioHTML += `<th>${dia}</th>`;
+            // Reproducir audio según la fecha
+            reproducirAudio(dia, mes + 1);
         }
 
-        calendarioHTML += '</tr><tr>';
+        function generarCalendario(año, mes, diaActual) {
+            const diasDelMes = new Date(año, mes + 1, 0).getDate();
+            const primerDiaDelMes = new Date(año, mes, 1).getDay();
 
-        // Espacios en blanco hasta el primer día del mes
-        for (let i = 0; i < primerDiaDelMes; i++) {
-            calendarioHTML += '<td></td>';
-        }
+            let calendarioHTML = '<table>';
+            calendarioHTML += '<tr>';
 
-        // Generar los días del mes
-        for (let i = 1; i <= diasDelMes; i++) {
-            let claseDia = '';
-
-            // Estilo especial para el 24 y 25 de diciembre
-            if (i === 24 || i === 25) {
-                claseDia = 'dia-festivo';
+            // Nombre de los días
+            const diasSemana = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+            for (let dia of diasSemana) {
+                calendarioHTML += `<th>${dia}</th>`;
             }
 
-            // Estilo especial para el día actual
-            if (i === diaActual) {
-                claseDia = 'dia-actual';
+            calendarioHTML += '</tr><tr>';
+
+            // Espacios en blanco hasta el primer día del mes
+            for (let i = 0; i < primerDiaDelMes; i++) {
+                calendarioHTML += '<td></td>';
             }
 
-            calendarioHTML += `<td class="${claseDia}">${i}</td>`;
+            // Generar los días del mes
+            for (let i = 1; i <= diasDelMes; i++) {
+                let claseDia = '';
 
-            // Cambiar de fila cada 7 días
-            if ((i + primerDiaDelMes) % 7 === 0) {
-                calendarioHTML += '</tr><tr>';
+                // Estilo especial para el 24 y 25 de diciembre
+                if (i === 24 || i === 25) {
+                    claseDia = 'dia-festivo';
+                }
+
+                // Estilo especial para el día actual
+                if (i === diaActual) {
+                    claseDia = 'dia-actual';
+                }
+
+                calendarioHTML += `<td class="${claseDia}">${i}</td>`;
+
+                // Cambiar de fila cada 7 días
+                if ((i + primerDiaDelMes) % 7 === 0) {
+                    calendarioHTML += '</tr><tr>';
+                }
+            }
+
+            calendarioHTML += '</tr></table>';
+
+            // Mostrar el calendario generado
+            document.getElementById('fechaCalendario').innerHTML += calendarioHTML;
+        }
+
+        function cerrarCalendario() {
+            const calendarioDiv = document.getElementById('calendario');
+            const fondoOscuro = document.getElementById('fondoOscuro');
+            calendarioDiv.style.display = 'none'; // Ocultar el calendario
+            fondoOscuro.style.display = 'none'; // Ocultar el fondo oscuro
+        }
+
+        function reproducirAudio(dia, mes) {
+            const audioEspecial = document.getElementById('audioEspecial');
+            const audioNormal = document.getElementById('audioNormal');
+
+            // Detener ambos audios primero
+            audioEspecial.pause();
+            audioNormal.pause();
+            audioEspecial.currentTime = 0;
+            audioNormal.currentTime = 0;
+
+            // Reproducir audio según la fecha
+            if (mes === 12 && (dia === 24 || dia === 25)) {
+                audioEspecial.play();
+            } else {
+                audioNormal.play();
             }
         }
-
-        calendarioHTML += '</tr></table>';
-
-        // Mostrar el calendario generado
-        document.getElementById('fechaCalendario').innerHTML += calendarioHTML;
-    }
-
-    function cerrarCalendario() {
-        const calendarioDiv = document.getElementById('calendario');
-        const fondoOscuro = document.getElementById('fondoOscuro');
-        calendarioDiv.style.display = 'none'; // Ocultar el calendario
-        fondoOscuro.style.display = 'none'; // Ocultar el fondo oscuro
-    }
-
-    // Función para reproducir música solo en la página /beta/game.html
-    function reproducirMusica() {
-        const audioNormal = document.getElementById('audioNormal');
-
-        // Verificar si estamos en la página /beta/game.html
-        if (window.location.pathname.includes('/beta/game.html')) {
-            audioNormal.play();
-        }
-    }
 
     // Reproducir música al cargar la página solo si estamos en /beta/game.html
     document.addEventListener('DOMContentLoaded', function () {
