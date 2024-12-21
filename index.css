@@ -319,7 +319,7 @@ li {
     z-index: 1000;
     width: 20rem;
     text-align: center;
-    background-color: #435f26;
+    background-color: rgb(217 216 216);
 }
 
 #fondoOscuro {
@@ -347,12 +347,13 @@ td {
     width: 14.28%;
     text-align: center;
     padding: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid #353434;
+    background-color: #696767;
 }
 
 td {
     cursor: pointer;
-    background-color: #800080;
+    background-color: rgb(139 137 137);
     color: white;
 }
 
@@ -361,14 +362,16 @@ td:hover {
 }
 
 td.dia-festivo {
-    background-color: #469b14;
-    color: white;
+    background-color: #ffffff;
+    color: #ff00f5;
+    
 }
 
 td.dia-actual {
-    background-color: #054103;
-    color: black;
+    background-color:black;
+    color: white;
     font-weight: bold;
+    border-radius: 50%;
 }
 
 button {
