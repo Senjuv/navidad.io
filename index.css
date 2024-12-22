@@ -107,7 +107,7 @@ button:hover {
 .pic-6 {
     width: 5%;
     margin-top: 1rem;
-    position: relative;
+   
 }
 .grl3 {
     display: grid;
@@ -539,9 +539,9 @@ nav li {
 
 .text-content {
     margin-top: -9rem;
-  }
-  
-  .christmas-card {
+}
+
+.christmas-card {
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -550,72 +550,69 @@ nav li {
     text-align: left;
     padding: 20px;
     margin: 0 auto; /* Centra la tarjeta */
-  }
+}
   
-  /* Para pantallas pequeñas (móviles) */
   @media (max-width: 480px) {
     .christmas-card {
-      width: 90%; /* Usa un ancho flexible */
-      padding: 15px;
+        width: 90%; /* Usa un ancho flexible */
+        padding: 15px;
     }
-  
+
     .card-title {
-      font-size: 1.4rem;
+        font-size: 1.4rem;
     }
-  
+
     .card-message {
-      font-size: 0.9rem;
-      line-height: 1.4;
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
-  
+
     .card-signature {
-      font-size: 0.8rem;
+        font-size: 0.8rem;
     }
-  
+
     .text-content {
-      margin-top: -6rem; /* Ajusta el margen */
+        margin-top: -6rem; /* Ajusta el margen */
     }
-  }
+}
   
-  /* Para pantallas medianas (tabletas) */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .christmas-card {
-      width: 80%;
-      padding: 20px;
+        width: 80%;
+        padding: 20px;
     }
-  
+
     .card-title {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  
+
     .card-message {
-      font-size: 1rem;
-      line-height: 1.5;
+        font-size: 1rem;
+        line-height: 1.5;
     }
-  }
+}
   
-  /* Para pantallas grandes (escritorio) */
-  @media (min-width: 769px) {
+@media (min-width: 769px) {
     .christmas-card {
-      width: 400px; /* Un poco más grande para escritorio */
+        width: 400px; /* Un poco más grande para escritorio */
     }
-  
+
     .card-title {
-      font-size: 1.8rem;
+        font-size: 1.8rem;
     }
-  
+
     .card-message {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  
+
     .card-signature {
-      font-size: 0.9rem;
+        font-size: 0.9rem;
     }
-  
+
     .text-content {
-      margin-top: -9rem;
+        margin-top: -9rem;
     }
-  }
+}
 
   /* Contenedor principal */
 .content-wrapper {
@@ -906,4 +903,16 @@ nav li {
 
 .swal-confirm-button:hover {
     background-color: #45a049;
+}
+.notification-bell img {
+    width: 50px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    cursor: pointer;
+}
+
+.notification-bell img {
+    width: 1.5rem; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    margin-left: 2rem;
+    margin-top: 1rem;
 }

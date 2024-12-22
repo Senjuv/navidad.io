@@ -30,15 +30,12 @@
                     </li>
                 </ul>
             </li>
-            <li class="li-1">
-                <a href="#" id="showAlert">
-                    <img src="/media/campana.png" alt="Instrucciones" class="pic-6">
-                </a>
-            </li>
+           
         </ul>
     </nav>
- 
-
+    <div class="notification-bell">
+        <img src="/media/notificacion.png" alt="Campana de notificación" id="showAlert">
+    </div>
     <div class="container">
         <h1 class="title">¡Feliz Navidad! 🎁</h1>
 
@@ -89,30 +86,41 @@
     <audio id="audioNormal" src="/media/videoplayback.m4a"></audio>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-          // Selecciona el enlace por su ID y agrega el evento de clic
-          document.getElementById("showAlert").addEventListener("click", function (event) {
-            event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-            Swal.fire({
-                title: "<strong>Instrucciones del Juego</strong>",
-                icon: "info",
-                html: `
-                Puedes encontrar  <img class="pic-2" src="/media/papa-noel (2).png" alt=""> <b>en los iconos de menú</b>,
+document.addEventListener('DOMContentLoaded', function() {
+    // Selecciona el enlace por su ID y agrega el evento de clic
+    document.getElementById("showAlert").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+        
+        // Cambiar la imagen al hacer clic
+        const showAlert = document.getElementById('showAlert');
+        showAlert.src = '/media/notificacion.png';
+        
+        // Mostrar la alerta
+        Swal.fire({
+            title: "<strong>Instrucciones del Juego</strong>",
+            icon: "info",
+            html: `
+                Puedes encontrar <img class="pic-2" src="/media/papa-noel (2).png" alt=""> <b>en los iconos de menú</b>,
                 <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a>,
-                para encontrar un juego. 
+                para encontrar un juego.
             `,
-                showCloseButton: true,
-                showCancelButton: true,
-                focusConfirm: false,
-                confirmButtonText: `
-<i class="fa fa-thumbs-up"></i> ¡Entendido!
-`,
-                confirmButtonAriaLabel: "Thumbs up, great!",
-                cancelButtonText: `
-<i class="fa fa-thumbs-down"></i>
-`,
-                cancelButtonAriaLabel: "Thumbs down"
-            });
+            showCloseButton: true,
+            showCancelButton: true,
+            focusConfirm: false,
+            confirmButtonText: `
+                <i class="fa fa-thumbs-up"></i> ¡Entendido!
+            `,
+            confirmButtonAriaLabel: "Thumbs up, great!",
+            cancelButtonText: `
+                <i class="fa fa-thumbs-down"></i>
+            `,
+            cancelButtonAriaLabel: "Thumbs down"
+        }).then(() => {
+            // Cambiar la imagen de nuevo al cerrar la alerta
+            showAlert.src = '/media/campana (1).png';
         });
+    });
+});
 
         // Ocultar el GIF de carga cuando la página ha terminado de cargarse
         window.addEventListener('load', function() {
