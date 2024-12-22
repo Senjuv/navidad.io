@@ -88,7 +88,6 @@ button:hover {
     margin-top: 1rem;
 }
 
-
 .pic-3 {
     width: 100%;
     grid-column: 2;
@@ -107,8 +106,8 @@ button:hover {
 .pic-6 {
     width: 5%;
     margin-top: 1rem;
-   
 }
+
 .grl3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -123,7 +122,7 @@ button:hover {
     gap: 5px;
     justify-items: center;
     align-items: center;
-margin-right: 2rem;
+    margin-right: 2rem;
 }
 
 .title {
@@ -178,6 +177,7 @@ margin-right: 2rem;
         padding: 0.8rem;
     }
 }
+
 /* Estilos para el footer */
 footer {
     margin-top: 2rem;
@@ -322,6 +322,36 @@ li {
 
     body {
         overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    }
+}
+
+/* Media Queries para pantallas grandes */
+@media screen and (min-width: 1024px) {
+    .title {
+        font-size: 48px; /* Aumenta el tamaño de la fuente para pantallas grandes */
+        margin-bottom: 10rem; /* Agrega un margen inferior de 10rem */
+    }
+
+    .message {
+        font-size: 1.2rem; /* Aumenta el tamaño de la fuente para pantallas grandes */
+    }
+
+    .pic {
+        max-width: 80%; /* Ajusta el tamaño máximo de las imágenes */
+    }
+
+    nav {
+        flex-direction: row; /* Asegura que el menú esté en fila */
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: row; /* Asegura que los elementos del menú estén en fila */
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0 1rem; /* Ajusta el margen entre los elementos del menú */
     }
 }
 
@@ -507,7 +537,7 @@ nav li {
     /* background-color: #000; */
 }
 
-.responsive-video {
+/* .responsive-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -535,7 +565,7 @@ nav li {
         width: 100%;
         height: auto;
     }
-}
+} */
 
 .text-content {
     margin-top: -9rem;
@@ -551,8 +581,8 @@ nav li {
     padding: 20px;
     margin: 0 auto; /* Centra la tarjeta */
 }
-  
-  @media (max-width: 480px) {
+
+@media (max-width: 480px) {
     .christmas-card {
         width: 90%; /* Usa un ancho flexible */
         padding: 15px;
@@ -575,7 +605,7 @@ nav li {
         margin-top: -6rem; /* Ajusta el margen */
     }
 }
-  
+
 @media (max-width: 768px) {
     .christmas-card {
         width: 80%;
@@ -591,7 +621,7 @@ nav li {
         line-height: 1.5;
     }
 }
-  
+
 @media (min-width: 769px) {
     .christmas-card {
         width: 400px; /* Un poco más grande para escritorio */
@@ -614,7 +644,7 @@ nav li {
     }
 }
 
-  /* Contenedor principal */
+/* Contenedor principal */
 .content-wrapper {
     display: flex;
     align-items: center;
@@ -707,6 +737,42 @@ nav li {
     }
 }
 
+/* Media Queries para pantallas grandes */
+@media (min-width: 1024px) {
+    .christmas-card {
+        width: 500px; /* Aumenta el tamaño de la tarjeta para pantallas grandes */
+        padding: 40px; /* Aumenta el padding para pantallas grandes */
+    }
+
+    .card-title {
+        font-size: 2rem; /* Aumenta el tamaño de la fuente para pantallas grandes */
+        margin-bottom: 0; /* Elimina el margen inferior */
+        padding-top: 0rem; /* Asegura que el texto se desplace hacia abajo */
+    }
+
+    .card-message {
+        font-size: 1.2rem; /* Aumenta el tamaño de la fuente para pantallas grandes */
+        line-height: 1.6; /* Mejora la legibilidad del texto */
+    }
+
+    .card-signature {
+        font-size: 1rem; /* Aumenta el tamaño de la fuente para pantallas grandes */
+    }
+
+    .text-content {
+        margin-top: 0; /* Elimina el margen negativo */
+    }
+
+    .gif-content-1 .pic {
+        width: 120px; /* Aumenta el tamaño de la imagen para pantallas grandes */
+    }
+
+    .content-wrapper {
+        flex-direction: row; /* Asegura que la imagen y el texto estén en fila */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+        gap: 30px; /* Aumenta el espacio entre la imagen y el texto */
+    }
+}
 /* Estilos para centrar el GIF de carga */
 #loading {
     position: fixed;
