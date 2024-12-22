@@ -88,6 +88,7 @@ button:hover {
     margin-top: 1rem;
 }
 
+
 .pic-3 {
     width: 100%;
     grid-column: 2;
@@ -103,6 +104,10 @@ button:hover {
     width: 4rem;
 }
 
+.pic-6 {
+    width: 5%;
+    margin-top: 1rem;
+}
 .grl3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -452,6 +457,14 @@ nav li {
     padding: 2rem;
 }
 
+.li-1{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: end; 
+  
+  }
+
 .th-5 {
     margin: 2rem;
     gap: 2rem;
@@ -716,3 +729,4 @@ nav li {
     width: 18rem; /* Ajusta el tamaño del GIF */
     height: auto; /* Mantiene la proporción del GIF */
 }
+

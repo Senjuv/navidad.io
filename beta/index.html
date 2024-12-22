@@ -13,11 +13,11 @@
     <div id="loading">
         <img src="/media/icegif-1258.gif" alt="Cargando...">
     </div>
-    <nav>
+    <nav class="navbar">
         <ul class="menu">
             <li class="dropdown">
-                <a href="#" onclick="toggleMenu()"><img  class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a> <!-- Al hacer clic se despliega el submenú -->
-                <ul class="dropdown-content">
+                <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a>
+                <ul class="dropdown-content" id="dropdownMenu">
                     <li>
                         <a href="#" onclick="mostrarCalendario()">
                             <img class="pic-2" src="/media/dia-de-navidad.png" alt="dia-de-navidad">
@@ -25,13 +25,19 @@
                     </li>
                     <li>
                         <a href="/beta/game.html">
-                            <img class="pic-2" src="/media/globo-de-nieve.png" alt="carta">
+                            <img class="pic-2" src="/media/papa-noel (2).png" alt="papa-noel">
                         </a>
                     </li>
                 </ul>
             </li>
+            <li class="li-1">
+                <a href="#" id="showAlert">
+                    <img src="/media/campana.png" alt="Instrucciones" class="pic-6">
+                </a>
+            </li>
         </ul>
     </nav>
+ 
 
     <div class="container">
         <h1 class="title">¡Feliz Navidad! 🎁</h1>
@@ -76,17 +82,46 @@
         </div>
     </footer>
 
+
+    
     <!-- Audios -->
     <audio id="audioEspecial" src="/media/videoplayback (1).m4a"></audio>
     <audio id="audioNormal" src="/media/videoplayback.m4a"></audio>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-         // Ocultar el GIF de carga cuando la página ha terminado de cargarse
-         window.addEventListener('load', function() {
+       // Selecciona el enlace por su ID y agrega el evento de clic
+       document.getElementById("showAlert").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
+            Swal.fire({
+                title: "<strong>Ejemplo de navegación</strong>",
+                icon: "info",
+                html: `
+                Puedes encontrar  <img class="pic-2" src="/media/papa-noel (2).png" alt=""> en los iconos de menú,
+                <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a>
+                para encontrar un juego
+            `,
+                showCloseButton: true,
+                showCancelButton: true,
+                focusConfirm: false,
+                confirmButtonText: `
+<i class="fa fa-thumbs-up"></i> ¡Entendido!
+`,
+                confirmButtonAriaLabel: "Thumbs up, great!",
+                cancelButtonText: `
+<i class="fa fa-thumbs-down"></i>
+`,
+                cancelButtonAriaLabel: "Thumbs down"
+            });
+        });
+
+        // Ocultar el GIF de carga cuando la página ha terminado de cargarse
+        window.addEventListener('load', function() {
             setTimeout(function() {
                 document.getElementById('loading').style.display = 'none';
-            }, 1000); // Esperar al menos 1 segundo
+            }, 250); // Esperar 250 milisegundos
         });
+
+ 
         // Función para alternar la visibilidad del submenú
         function toggleMenu() {
             const subMenu = document.querySelector('.dropdown-content');

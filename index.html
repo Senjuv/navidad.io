@@ -16,7 +16,8 @@
     <nav>
         <ul class="menu">
             <li class="dropdown">
-                <a href="#" onclick="toggleMenu()"><img  class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a> <!-- Al hacer clic se despliega el submenú -->
+                <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png"
+                        alt="Menú"></a> <!-- Al hacer clic se despliega el submenú -->
                 <ul class="dropdown-content">
                     <li>
                         <a href="#" onclick="mostrarCalendario()">
@@ -34,48 +35,48 @@
     </nav>
 
     <div class="container">
-        <h1 class="title-2">Todo listo!!</h1>
+        <h1 class="title-2">Bienvenida!!</h1>
         <div class="grl3">
             <div></div> <!-- Espacio vacío en la primera columna -->
             <div class="gif-content">
-                <img class="pic-3" src="media/6e2f7973095755e0a866d4215335ceb7.gif" alt="gif-santa">
+                <img class="pic-3" src="media/santaclaus.gif" alt="gif-santa">
             </div>
             <div></div> <!-- Espacio vacío en la tercera columna -->
         </div>
-        
+
     </div>
     <!-- <div>
         <p class="message-1">Estará disponible pronto.</p>
     </div> -->
     <center>
-    <button class="button-alert" id="showAlert">instrucciones</button>
+        <button class="button-alert" id="showAlert">instrucciones</button>
 
-    <script>
-        // Selecciona el botón por su ID y agrega el evento de clic
-        document.getElementById("showAlert").addEventListener("click", function () {
-            Swal.fire({
-                title: "<strong>Ejemplo de navegacion</strong>",
-                icon: "info",
-                html: `
+        <script>
+            // Selecciona el botón por su ID y agrega el evento de clic
+            document.getElementById("showAlert").addEventListener("click", function () {
+                Swal.fire({
+                    title: "<strong>Ejemplo de navegacion</strong>",
+                    icon: "info",
+                    html: `
                     Puedes usar <b>los iconos de menu</b>,
                     <a href="#" onclick="toggleMenu()"><img  class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a>,
                     para moverte entre paginas por toda la app
                 `,
                 showCloseButton: true,
-                showCancelButton: true,
-                focusConfirm: false,
-                confirmButtonText: `
-                    <i class="fa fa-thumbs-up"></i> entendido!
-                `,
-                confirmButtonAriaLabel: "Thumbs up, great!",
-                cancelButtonText: `
-                    <i class="fa fa-thumbs-down"></i>
-                `,
-                cancelButtonAriaLabel: "Thumbs down"
+  showCancelButton: true,
+  focusConfirm: false,
+  confirmButtonText: `
+    <i class="fa fa-thumbs-up"></i> entendido!
+  `,
+                    confirmButtonAriaLabel: "Thumbs up, great!",
+                    cancelButtonText: `
+    <i class="fa fa-thumbs-down"></i>
+  `,
+                    cancelButtonAriaLabel: "Thumbs down"
+                });
             });
-        });
-    </script>
-</center>
+        </script>
+    </center>
 
     <!-- Fondo oscuro que aparece cuando el calendario está visible -->
     <div id="fondoOscuro" onclick="cerrarCalendario()"></div>
@@ -89,10 +90,11 @@
     <footer>
         <div class="grl3">
             <div>
-            <p>Creado por <strong>Miguel</strong>. Todos los derechos reservados &copy; 2024.</p>
-        </div>
-        <div></div>
-        <div><a href="https://www.instagram.com/sanchez.d_miguel/?__pwa=1#"><img class="pic-4" src="/media/1384031.png" alt=""></a></div>
+                <p>Creado por <strong>Miguel</strong>. Todos los derechos reservados &copy; 2024.</p>
+            </div>
+            <div></div>
+            <div><a href="https://www.instagram.com/sanchez.d_miguel/?__pwa=1#"><img class="pic-4"
+                        src="/media/1384031.png" alt=""></a></div>
         </div>
     </footer>
 
@@ -101,14 +103,14 @@
     <audio id="audioNormal" src="/media/videoplayback.m4a"></audio>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-  // Ocultar el GIF de carga cuando la página ha terminado de cargarse
-  window.addEventListener('load', function() {
-            setTimeout(function() {
+        // Ocultar el GIF de carga cuando la página ha terminado de cargarse
+        window.addEventListener('load', function () {
+            setTimeout(function () {
                 document.getElementById('loading').style.display = 'none';
-            }, 1000); // Esperar al menos 1 segundo
+            }, 500); // Esperar al menos 1 segundo
         });
-          // Función para alternar la visibilidad del submenú
-          function toggleMenu() {
+        // Función para alternar la visibilidad del submenú
+        function toggleMenu() {
             const subMenu = document.querySelector('.dropdown-content');
             subMenu.style.display = subMenu.style.display === 'block' ? 'none' : 'block';
         }
