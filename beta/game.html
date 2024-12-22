@@ -21,12 +21,12 @@
                 <ul class="dropdown-content">
                     <li>
                         <a href="#" onclick="mostrarCalendario()">
-                            <img class="pic-2" src="/media/dia-de-navidad.png" alt="dia-de-navidad">
+                            <img class="pic-2" src="/media/dia-de-navidad.png" alt="dia-de-navidad"><span class="span-1">Calendario</span>
                         </a>
                     </li>
                     <li>
                         <a href="/beta/index.html">
-                            <img class="pic-2" src="/media/carta.png" alt="carta">
+                            <img class="pic-2" src="/media/carta.png" alt="carta"><span class="span-1">Mensajito</span>
                         </a>
                     </li>
                 </ul>
@@ -35,11 +35,13 @@
     </nav>
     
     <section class="section">
+     
         <div>
             <p class="message-1">ayuda a santa a recuperar sus regalos!!</p>
         </div>
         
         <table class="table">
+           
             <tbody>
                 <!-- Fila 1 -->
                 <tr class="tr">
@@ -64,7 +66,7 @@
                 <!-- Fila 3 -->
                 <tr class="tr">
                     <td class="th-5"><img class="pic-5" src="/media/a23d4d7e7bddd400832cd3726586e214.png" alt="grinch"></td>
-                    <td class="th-5 barril"><img class="pic-5" src="/media/5f5236182437d00004e357a0.png" alt="barriles"></td>
+                    <td class="th-5 "><img class="pic-5" src="/media/5f5236182437d00004e357a0.png" alt="caja"></td>
                     <td class="th-5"></td>
                     <td class="th-5 barril"><img class="pic-5" src="/media/63959675_9549840.png" alt="barriles"></td>
                     <td class="th-5 barril"><img class="pic-5" src="/media/63959675_9549840.png" alt="barriles"></td>
@@ -77,7 +79,7 @@
                     <td class="th-5"></td>
                     <td class="th-5 barril"><img class="pic-5" src="/media/63959675_9549840.png" alt="barriles"></td>
                     <td class="th-5"></td>
-                    <td class="th-5 barril"><img class="pic-5" src="/media/589c89df64b351149f22a860.png" alt="barriles"></td>
+                    <td class="th-5 "><img class="pic-5" src="/media/589c89df64b351149f22a860.png" alt="caja"></td>
                 </tr>
                 <!-- Fila 5 -->
                 <tr class="tr">
@@ -86,13 +88,13 @@
                     <td class="th-5"></td>
                     <td class="th-5"></td>
                     <td class="th-5"></td>
-                    <td class="th-5 barril"><img class="pic-5" src="/media/5f5236182437d00004e357a0.png" alt="barriles"></td>
+                    <td class="th-5 "><img class="pic-5" src="/media/5f5236182437d00004e357a0.png" alt="caja"></td>
                 </tr>
                 <!-- Fila 6 -->
                 <tr class="tr">
                     <td class="th-5"></td>
                     <td class="th-5"></td>
-                    <td class="th-5 barril"><img class="pic-5" src="/media/589c89df64b351149f22a860.png" alt="barriles"></td>
+                    <td class="th-5 "><img class="pic-5" src="/media/589c89df64b351149f22a860.png" alt="caja"></td>
                     <td class="th-5"><img class="pic-5" src="/media/a23d4d7e7bddd400832cd3726586e214.png" alt="grinch"></td>
                     <td class="th-5 barril"><img class="pic-5" src="/media/63959675_9549840.png" alt="barriles"></td>
                     <td class="th-5"></td>
@@ -108,7 +110,7 @@
                 </tr>
                 <!-- Fila 8 -->
                 <tr class="tr">
-                    <td class="th-5 barril"><img class="pic-5" src="/media/5f5236182437d00004e357a0.png" alt="barriles"></td>
+                    <td class="th-5 "><img class="pic-5" src="/media/5f5236182437d00004e357a0.png" alt="caja"></td>
                     <td class="th-5"></td>
                     <td class="th-5"></td>
                     <td class="th-5"></td>
@@ -155,11 +157,17 @@
         </div>
     </footer>
 
+   
+    <div id="timer">Tiempo restante: <span id="time">30</span> segundos</div>
+
+  
+
 <!-- Audios -->
 <audio id="audioEspecial" src="/media/videoplayback (1).m4a"></audio>
 <audio id="audioNormal" src="/media/videoplayback.m4a"></audio>
 
 <script>
+          
      // Ocultar el GIF de carga cuando la página ha terminado de cargarse
      window.addEventListener('load', function() {
             setTimeout(function() {
@@ -275,6 +283,51 @@
         reproducirMusica();
     });
 
+  
+        // Variables globales para el temporizador
+        let timerInterval;
+
+        // Función para iniciar el temporizador
+        function iniciarTemporizador(duracion, display) {
+            let timer = duracion, minutes, seconds;
+            timerInterval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(timerInterval);
+                    // Regresar Santa al inicio
+                    moverSantaAlInicio();
+                }
+            }, 700);
+        }
+
+        // Función para mover Santa al inicio
+        function moverSantaAlInicio() {
+            const santa = document.querySelector('#santa');
+            currentRow = initialRow;
+            currentCol = initialCol;
+            moveSanta();
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: " ¡Se te ha terminado el tiempo!",
+            });
+            // Reiniciar el temporizador
+            iniciarTemporizador(30, document.querySelector('#time'));
+        }
+
+        // Iniciar el temporizador al cargar la página
+        window.onload = function () {
+            const tiempoRestante = 30; // 30 segundos
+            const display = document.querySelector('#time');
+            iniciarTemporizador(tiempoRestante, display);
+        };
 
     const santa = document.querySelector('#santa');
 let currentRow = 0;
@@ -330,6 +383,11 @@ function isGrinch(row, col) {
     return celda.querySelector('img') && celda.querySelector('img').alt === 'grinch';
 }
 
+function isCaja(row, col) {
+    const celda = document.querySelectorAll('.tr')[row].children[col];
+    return celda.querySelector('img') && celda.querySelector('img').alt === 'caja';
+}
+
 function checkMeta() {
     const celda = document.querySelectorAll('.tr')[currentRow].children[currentCol];
     if (celda.querySelector('img') && celda.querySelector('img').alt === 'meta') {
@@ -346,6 +404,19 @@ function checkMeta() {
   icon: "error",
   title: "Oops...",
   text: "¡Oh no! \n ¡Santa ha sido atrapado!",
+  
+});
+    }
+
+        // Si Santa pasa por el Grinch, volver a la posición inicial
+        if (isCaja(currentRow, currentCol)) {
+        currentRow = initialRow;
+        currentCol = initialCol;
+        moveSanta();
+        Swal.fire({
+  icon: "error",
+  title: "Oops...",
+  text: "¡Oh no! \n ¡Santa se ha accidentado!",
   
 });
     }

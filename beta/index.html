@@ -20,12 +20,12 @@
                 <ul class="dropdown-content" id="dropdownMenu">
                     <li>
                         <a href="#" onclick="mostrarCalendario()">
-                            <img class="pic-2" src="/media/dia-de-navidad.png" alt="dia-de-navidad">
+                            <img class="pic-2" src="/media/dia-de-navidad.png" alt="dia-de-navidad"><span class="span-1">Calendario</span>
                         </a>
                     </li>
                     <li>
                         <a href="/beta/game.html">
-                            <img class="pic-2" src="/media/papa-noel (2).png" alt="papa-noel">
+                            <img class="pic-2" src="/media/papa-noel (2).png" alt="papa-noel"><span class="span-1">Juego</span>
                         </a>
                     </li>
                 </ul>
@@ -89,16 +89,16 @@
     <audio id="audioNormal" src="/media/videoplayback.m4a"></audio>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-       // Selecciona el enlace por su ID y agrega el evento de clic
-       document.getElementById("showAlert").addEventListener("click", function (event) {
+          // Selecciona el enlace por su ID y agrega el evento de clic
+          document.getElementById("showAlert").addEventListener("click", function (event) {
             event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
             Swal.fire({
-                title: "<strong>Ejemplo de navegación</strong>",
+                title: "<strong>Instrucciones del Juego</strong>",
                 icon: "info",
                 html: `
-                Puedes encontrar  <img class="pic-2" src="/media/papa-noel (2).png" alt=""> en los iconos de menú,
-                <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a>
-                para encontrar un juego
+                Puedes encontrar  <img class="pic-2" src="/media/papa-noel (2).png" alt=""> <b>en los iconos de menú</b>,
+                <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a>,
+                para encontrar un juego. 
             `,
                 showCloseButton: true,
                 showCancelButton: true,

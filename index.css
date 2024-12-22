@@ -107,6 +107,7 @@ button:hover {
 .pic-6 {
     width: 5%;
     margin-top: 1rem;
+    position: relative;
 }
 .grl3 {
     display: grid;
@@ -456,15 +457,13 @@ nav li {
     background-color: #353432;
     padding: 2rem;
 }
-
 .li-1{
     margin-top: 1rem;
     display: flex;
-    flex-direction: row;
-    align-items: end; 
-  
-  }
 
+    align-items: end; 
+    position: relative;;
+  }
 .th-5 {
     margin: 2rem;
     gap: 2rem;
@@ -730,3 +729,96 @@ nav li {
     height: auto; /* Mantiene la proporción del GIF */
 }
 
+
+
+#timer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    z-index: 1000;
+}
+/* Estilos para el menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #435f26;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10; /* Asegúrate de que el menú desplegable esté por encima */
+}
+
+.dropdown-content li {
+    padding: 8px 12px;
+}
+
+.dropdown-content li a {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: #800080;
+}
+
+.menu .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilos para el elemento .li-1 */
+.li-1 {
+    margin-top: 1rem;
+    display: flex;
+    align-items: end;
+    position: relative;
+    z-index: 1; /* Asegúrate de que el elemento esté por debajo del menú desplegable */
+}
+
+/* Otros estilos */
+.section {
+    height: 100%;
+    margin: 10%;
+    background-color: #353432;
+    padding: 2rem;
+}
+
+.th-5 {
+    margin: 2rem;
+    gap: 2rem;
+    height: 30px;
+    background-color: #4e4d4a;
+}
+
+.tr {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+.span-1{
+    margin-left: 2vh;
+    font-size: 100%;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.title-1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-family: 'Georgia', serif;
+    font-style: italic;
+}
