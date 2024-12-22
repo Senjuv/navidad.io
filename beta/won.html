@@ -13,15 +13,17 @@
     <div id="loading">
         <img src="/media/icegif-1258.gif" alt="Cargando...">
     </div>
-<!-- ...existing code... -->
+    <!-- ...existing code... -->
     <nav>
         <ul class="menu">
             <li class="dropdown">
-                <a href="#" onclick="toggleMenu()"><img  class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a> <!-- Al hacer clic se despliega el submenú -->
+                <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png"
+                        alt="Menú"></a> <!-- Al hacer clic se despliega el submenú -->
                 <ul class="dropdown-content">
                     <li>
                         <a href="#" onclick="mostrarCalendario()">
-                            <img class="pic-2" src="/media/dia-de-navidad.png" alt="dia-de-navidad"><span class="span-1">Calendario</span>
+                            <img class="pic-2" src="/media/dia-de-navidad.png" alt="dia-de-navidad"><span
+                                class="span-1">Calendario</span>
                         </a>
                     </li>
                     <li>
@@ -33,7 +35,7 @@
             </li>
         </ul>
     </nav>
-    
+
     <div class="container">
         <h1 class="title-1">Lo lograste!!</h1>
         <h1 class="title-2"></h1>
@@ -45,16 +47,31 @@
             <div></div> <!-- Espacio vacío en la tercera columna -->
         </div>
     </div>
-  
+
     <div class="text-content">
         <section class="christmas-card">
             <div class="card-content">
                 <h2 class="card-title"></h2>
-                <p class="card-message">En esta vida, que a menudo parece absurda y sin propósito, encontrarte ha sido una de esas raras coincidencias que le dan un poco de sentido a todo. Espero que esto, aunque simple, logre alegrarte.</p>
+                <p class="card-message">En esta vida, que a menudo parece absurda y sin propósito, encontrarte ha sido
+                    una de esas raras coincidencias que le dan un poco de sentido a todo. Espero que esto, aunque
+                    simple, logre alegrarte.</p>
             </div>
             <p class="card-signature">- Miguel</p>
         </section>
     </div>
+
+    <!-- Galería de Imágenes -->
+    <div class="gallery">
+        <div class="gallery-images">
+            <img src="/media/galery/perro-guapo.jpg" alt="Imagen 1" class="gallery-img"
+                data-message="La vida es absurda y sin sentido, pero somos quienes podemos darle propósito. A veces, quienes nos rodean nos ayudan a encontrar nuestro camino. No te desesperes, encontrarás tu razón de ser.">
+            <img src="/media/galery/perrito.jpg" alt="Imagen 2" class="gallery-img"
+                data-message="Estudiar las leyes de la física y el universo me ha hecho ver lo pequeños que somos. A menudo, nos enfocamos en problemas que parecen gigantes, pero en realidad somos efímeros, demasiado pequeños para afligirnos por trivialidades.">
+            <img src="/media/galery/unPerro.jpeg" alt="Imagen 3" class="gallery-img"
+                data-message="Estudiar las leyes de la física me ha mostrado que quizás somos solo coincidencias en una pequeña parte de un universo infinito. Somos seres simples, afortunados de estar en la misma fracción del tiempo, viviendo bajo las mismas leyes que nos permiten existir.">
+        </div>
+    </div>
+
 
     <!-- Fondo oscuro que aparece cuando el calendario está visible -->
     <div id="fondoOscuro" onclick="cerrarCalendario()"></div>
@@ -68,27 +85,57 @@
     <footer>
         <div class="grl3">
             <div>
-            <p>Creado por <strong>Miguel</strong>. Todos los derechos reservados &copy; 2024.</p>
-        </div>
-        <div></div>
-        <div><a href="https://www.instagram.com/sanchez.d_miguel/?__pwa=1#"><img class="pic-4" src="/media/1384031.png" alt=""></a></div>
+                <p>Creado por <strong>Miguel</strong>. Todos los derechos reservados &copy; 2024.</p>
+            </div>
+            <div></div>
+            <div><a href="https://www.instagram.com/sanchez.d_miguel/?__pwa=1#"><img class="pic-4"
+                        src="/media/1384031.png" alt=""></a></div>
         </div>
     </footer>
 
     <!-- Audios -->
     <audio id="audioEspecial" src="/media/videoplayback (1).m4a"></audio>
     <audio id="audioNormal" src="/media/videoplayback.m4a"></audio>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <script>
-           // Ocultar el GIF de carga cuando la página ha terminado de cargarse
-        window.addEventListener('load', function() {
-            setTimeout(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    const galleryImages = document.querySelectorAll('.gallery-img');
+
+    galleryImages.forEach(img => {
+        img.addEventListener('click', function() {
+            const message = img.getAttribute('data-message');
+            Swal.fire({
+                title: '',
+                text: message,
+                width: '80%',
+                padding: '2em',
+                color: '#2f2c2b',
+                background: '#fff',
+                backdrop: `
+                    rgba(106, 13, 173, 0.4) /* Fondo morado semitransparente */
+                `,
+                confirmButtonText: 'Cerrar',
+                confirmButtonColor: '#1a1b1c',
+                customClass: {
+                    popup: 'swal-popup',
+                    title: 'swal-title',
+                    content: 'swal-content',
+                    confirmButton: 'swal-confirm-button'
+                }
+            });
+        });
+    });
+});
+        // Ocultar el GIF de carga cuando la página ha terminado de cargarse
+        window.addEventListener('load', function () {
+            setTimeout(function () {
                 document.getElementById('loading').style.display = 'none';
             }, 500); // Esperar al menos 1 segundo
         });
 
-      // Función para alternar la visibilidad del submenú
-      function toggleMenu() {
+        // Función para alternar la visibilidad del submenú
+        function toggleMenu() {
             const subMenu = document.querySelector('.dropdown-content');
             subMenu.style.display = subMenu.style.display === 'block' ? 'none' : 'block';
         }

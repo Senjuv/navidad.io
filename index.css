@@ -823,3 +823,87 @@ nav li {
     font-style: italic;
     margin-bottom: 8rem;
 }
+
+.gallery {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.gallery-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permitir que las imágenes se envuelvan en múltiples filas */
+    gap: 1rem;
+}
+.gallery-images img {
+    width: 100%;
+    max-width: 150px; /* Limitar el tamaño máximo de las imágenes */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra intensa */
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.gallery-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos responsivos */
+@media (min-width: 576px) {
+    .gallery-images img {
+        max-width: 120px; /* Ajustar el tamaño máximo de las imágenes en pantallas pequeñas */
+    }
+}
+
+@media (min-width: 768px) {
+    .gallery-images img {
+        max-width: 150px; /* Ajustar el tamaño máximo de las imágenes en pantallas medianas */
+    }
+}
+
+@media (min-width: 992px) {
+    .gallery-images img {
+        max-width: 200px; /* Ajustar el tamaño máximo de las imágenes en pantallas grandes */
+    }
+}
+
+@media (min-width: 1200px) {
+    .gallery-images img {
+        max-width: 250px; /* Ajustar el tamaño máximo de las imágenes en pantallas extra grandes */
+    }
+}
+.swal-popup {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 2rem; /* Añadir padding interno */
+    background: #6a0dad; /* Fondo morado */
+}
+
+.swal-title {
+    font-size: 2rem; /* Aumentar el tamaño de la fuente */
+    color: #fff; /* Color del texto del título */
+    margin-bottom: 1rem;
+    font-weight: bold; /* Hacer el título en negrita */
+}
+.swal-content {
+    font-size: 1.2rem;
+    color: #fff; /* Color del texto del contenido */
+    line-height: 1.5; /* Mejorar la legibilidad del texto */
+    text-align: left; /* Alinear el texto a la izquierda */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Cambiar la fuente */
+    font-weight: 400; /* Peso de fuente normal */
+}
+.swal-confirm-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem; /* Aumentar el padding del botón */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1rem; /* Aumentar el tamaño de la fuente del botón */
+}
+
+.swal-confirm-button:hover {
+    background-color: #45a049;
+}
