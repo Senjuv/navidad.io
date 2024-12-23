@@ -3,16 +3,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 /* Estilo base: Aplicado a todas las pantallas */
-body {
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     background-color: #b93636;
     overflow-x: hidden; /* Evita el desbordamiento horizontal */
     overflow-y: auto; /* Permite el desbordamiento vertical solo cuando es necesario */
-    width: 100%; /* Asegura que el ancho no se desborde */
-    height: 100%; /* Asegura que el alto no se desborde */
     box-sizing: border-box; /* Asegura que los bordes y el padding se incluyan en las medidas de tamaño */
 }
+
+/* Contenedor principal que ocupa el espacio restante */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente si es necesario */
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
 
 *,
 *::before,
@@ -94,9 +121,8 @@ button:hover {
 }
 
 .pic-4 {
-    width: 20%;
-    grid-column: 2;
-    margin-left: 40%;
+    width: 40px;
+    height: 40px;
 }
 
 .pic-5 {
@@ -109,13 +135,10 @@ button:hover {
 }
 
 .grl3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    justify-items: center;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
-
 .grl4 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -178,32 +201,31 @@ button:hover {
     }
 }
 
-/* Estilos para el footer */
 footer {
-    margin-top: 2rem;
     background-color: #333;
     color: white;
     text-align: left;
     padding: 20px;
-    position: relative;
     width: 100%;
-    bottom: 0;
+    box-sizing: border-box;
+    margin-top: 2rem;
 }
 
 footer p {
     margin: 0;
     font-size: 1rem;
 }
-
+    
 /* Solución para el solapamiento del footer */
+ 
 body {
-    padding-bottom: 80px; /* Evita que el footer se superponga */
+    padding-bottom: 80px; 
 }
-
+ 
 footer p {
     margin: 0;
     font-size: 1rem;
-}
+} 
 
 /* Estilo para el menú */
 nav {
