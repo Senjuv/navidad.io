@@ -13,53 +13,70 @@
     <div id="loading">
         <img src="/media/icegif-1258.gif" alt="Cargando...">
     </div>
-    <nav class="navbar">
+    <!-- ...existing code... -->
+    <nav>
         <ul class="menu">
             <li class="dropdown">
-                <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a>
-                <ul class="dropdown-content" id="dropdownMenu">
+                <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png"
+                        alt="Menú"></a> <!-- Al hacer clic se despliega el submenú -->
+                <ul class="dropdown-content">
                     <li>
                         <a href="#" onclick="mostrarCalendario()">
-                            <img class="pic-2" src="/media/dia-de-navidad.png" alt="dia-de-navidad"><span class="span-1">Calendario</span>
+                            <img class="pic-2" src="/media/dia-de-navidad.png" alt="dia-de-navidad"><span
+                                class="span-1">Calendario</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/beta/game.html">
-                            <img class="pic-2" src="/media/papa-noel (2).png" alt="papa-noel"><span class="span-1">Juego</span>
+                        <a href="/beta/index.html">
+                            <img class="pic-2" src="/media/carta.png" alt="carta"><span class="span-1">Mensajito</span>
                         </a>
                     </li>
                 </ul>
             </li>
-           
         </ul>
     </nav>
     <div class="notification-bell">
         <img src="/media/notificacion.png" alt="Campana de notificación" id="showAlert">
     </div>
     <div class="container">
-        <h1 class="title">¡Feliz Navidad! 🎁</h1>
-
-        <div class="content-wrapper">
-            <div class="gif-content-1">
-                <img class="pic" src="/media/christmas-santa-claus-christmas-gift-drawing-illustration-gif-element_2676918.png!bw700" alt="gif-arbolito">
-            </div>
-            <div class="text-content">
-                <section class="christmas-card">
-                    <div class="card-content">
-                        <h2 class="card-title"></h2>
-                        <p class="card-message">
-                            Hola,  
-                            Quiero aprovechar esta Navidad para decirte lo especial que eres para mí. Gracias por todos los momentos 
-                            increíbles que hemos compartido.  
-                            Espero que esta Navidad sea tan mágica como tú, llena de alegría, risas y esos pequeños detalles que hacen la vida más bonita.   
-                            ¡Disfruta mucho, come rico, y no olvides lo mucho que te aprecio!  
-                        </p>
-                        <p class="card-signature">Con cariño, <strong>Miguel</strong>.</p>
-                    </div>
-                </section>
-            </div>
+        <h1 class="title-1">Lo lograste!!</h1>
+        <h1 class="title-2"></h1>
+        <div class="grl3">
+            <div></div> <!-- Espacio vacío en la primera columna -->
+            <!-- <div class="gif-content">
+                <video class="responsive-video" src="/media/Feliz Navidad 😀, chupalo🤑 🎄⛄.mp4" autoplay loop></video>
+            </div> -->
+            <div></div> <!-- Espacio vacío en la tercera columna -->
         </div>
     </div>
+
+    <div class="text-content">
+        <section class="christmas-card">
+            <div class="card-content">
+                <h2 class="card-title"></h2>
+                <p class="card-message">En esta vida, donde lo absurdo parece ser la norma y el propósito a menudo se
+                    esconde, encontrar momentos como este es un recordatorio de que somos quienes damos significado a lo
+                    que nos rodea. Que este pequeño gesto, aunque simple, sea una chispa de alegría y te inspire a
+                    seguir buscando sentido incluso en lo inesperado. Porque, al final, es en lo absurdo donde podemos
+                    descubrir lo más genuino de nosotros mismos.</p>
+            </div>
+            <p class="card-signature">- Miguel</p>
+        </section>
+    </div>
+
+    <!-- Galería de Imágenes -->
+    <div class="gallery">
+        <div class="gallery-images">
+            <img src="/media/galery/perro-guapo.jpg" alt="Imagen 1" class="gallery-img"
+                data-message="La vida es absurda y sin sentido, pero somos quienes podemos darle propósito. A veces, quienes nos rodean nos ayudan a encontrar nuestro camino. No te desesperes, encontrarás tu razón de ser.">
+            <img src="/media/galery/perrito.jpg" alt="Imagen 2" class="gallery-img"
+                data-message="Estudiar las leyes de la física y el universo me ha hecho ver lo pequeños que somos. A menudo, nos enfocamos en problemas que parecen gigantes, pero en realidad somos efímeros, demasiado pequeños para afligirnos por trivialidades.">
+            <img src="/media/galery/unPerro.jpeg" alt="Imagen 3" class="gallery-img"
+                data-message="Estudiar las leyes de la física me ha mostrado que quizás somos solo coincidencias en una pequeña parte de un universo infinito. Somos seres simples, afortunados de estar en la misma fracción del tiempo, viviendo bajo las mismas leyes que nos permiten existir.">
+        </div>
+    </div>
+
+
     <!-- Fondo oscuro que aparece cuando el calendario está visible -->
     <div id="fondoOscuro" onclick="cerrarCalendario()"></div>
 
@@ -72,47 +89,46 @@
     <footer>
         <div class="grl3">
             <div>
-            <p>Creado por <strong>Miguel</strong>. Todos los derechos reservados &copy; 2024.</p>
-        </div>
-        <div></div>
-        <div><a href="https://www.instagram.com/sanchez.d_miguel/?__pwa=1#"><img class="pic-4" src="/media/1384031.png" alt=""></a></div>
+                <p>Creado por <strong>Miguel</strong>. Todos los derechos reservados &copy; 2024.</p>
+            </div>
+            <div></div>
+            <div><a href="https://www.instagram.com/sanchez.d_miguel/?__pwa=1#"><img class="pic-4"
+                        src="/media/1384031.png" alt=""></a></div>
         </div>
     </footer>
 
-
-    
     <!-- Audios -->
     <audio id="audioEspecial" src="/media/videoplayback (1).m4a"></audio>
     <audio id="audioNormal" src="/media/videoplayback.m4a"></audio>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Selecciona el enlace por su ID y agrega el evento de clic
     document.getElementById("showAlert").addEventListener("click", function (event) {
         event.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-        
+
         // Cambiar la imagen al hacer clic
         const showAlert = document.getElementById('showAlert');
         showAlert.src = '/media/notificacion.png';
-        
+
         // Mostrar la alerta
         Swal.fire({
-            title: "<strong>Instrucciones del Juego</strong>",
-            icon: "info",
+            title: "<strong>¡Un Momento para Recordar!</strong>",
+            icon: "success",
             html: `
-                Puedes encontrar <img class="pic-2" src="/media/papa-noel (2).png" alt=""> <b>en los iconos de menú</b>,
-                <a href="#" onclick="toggleMenu()"><img class="pic-2" src="/media/menu-principal (1).png" alt="Menú"></a>,
-                para encontrar un juego.
+                <p> Has superado el <b>nivel secreto.</b></p>
+                <p>🎉 Gracias por sumergirte en esta experiencia única. Que este pequeño logro te inspire a seguir buscando lo extraordinario en cada rincón de la vida. 🎉</p>
             `,
             showCloseButton: true,
             showCancelButton: true,
             focusConfirm: false,
             confirmButtonText: `
-                <i class="fa fa-thumbs-up"></i> ¡Entendido!
+                <i class="fa fa-thumbs-up"></i> ¡Seguir adelante!
             `,
-            confirmButtonAriaLabel: "Thumbs up, great!",
+            confirmButtonAriaLabel: "Continuar",
             cancelButtonText: `
-                <i class="fa fa-thumbs-down"></i> cerrar
+                <i class="fa fa-thumbs-down"></i> Cerrar
             `,
             cancelButtonAriaLabel: "Cerrar"
         }).then(() => {
@@ -122,20 +138,48 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryImages = document.querySelectorAll('.gallery-img');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function () {
+                    const message = img.getAttribute('data-message');
+                    Swal.fire({
+                        title: '',
+                        text: message,
+                        width: '80%',
+                        padding: '2em',
+                        color: '#2f2c2b',
+                        background: '#fff',
+                        backdrop: `
+                    rgba(106, 13, 173, 0.4) /* Fondo morado semitransparente */
+                `,
+                        confirmButtonText: 'Cerrar',
+                        confirmButtonColor: '#1a1b1c',
+                        customClass: {
+                            popup: 'swal-popup',
+                            title: 'swal-title',
+                            content: 'swal-content',
+                            confirmButton: 'swal-confirm-button'
+                        }
+                    });
+                });
+            });
+        });
         // Ocultar el GIF de carga cuando la página ha terminado de cargarse
-        window.addEventListener('load', function() {
-            setTimeout(function() {
+        window.addEventListener('load', function () {
+            setTimeout(function () {
                 document.getElementById('loading').style.display = 'none';
-            }, 250); // Esperar 250 milisegundos
+            }, 500); // Esperar al menos 1 segundo
         });
 
- 
         // Función para alternar la visibilidad del submenú
         function toggleMenu() {
             const subMenu = document.querySelector('.dropdown-content');
             subMenu.style.display = subMenu.style.display === 'block' ? 'none' : 'block';
         }
-
         // Mostrar el calendario
         function mostrarCalendario() {
             const calendarioDiv = document.getElementById('calendario');

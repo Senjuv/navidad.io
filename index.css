@@ -857,7 +857,7 @@ nav li {
     margin: 2rem;
     gap: 2rem;
     height: 30px;
-    background-color: #4e4d4a;
+    background-color: #e4e3e3d7;
 }
 
 .tr {
@@ -866,6 +866,40 @@ nav li {
 }
 
 .tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Otros estilos */
+.section-1 {
+    height: 100%;
+    margin: 10%;
+    background-color: #000000;
+    padding: 2rem;
+}
+
+th,
+td {
+    width: 14.28%;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #757474;
+    background-color: #388e3c;
+    color: white;
+}
+
+.th-6 {
+    margin: 2rem;
+    gap: 2rem;
+    height: 30px;
+    background-color: #2c2c2cd7;
+}
+
+.tr-1 {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.tr-1:hover {
     background-color: #f1f1f1;
 }
 
