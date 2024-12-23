@@ -135,6 +135,34 @@
         });
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+            const galleryImages = document.querySelectorAll('.gallery-img');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function () {
+                    const message = img.getAttribute('data-message');
+                    Swal.fire({
+                        title: '',
+                        text: message,
+                        width: '80%',
+                        padding: '2em',
+                        color: '#2f2c2b',
+                        background: '#fff',
+                        backdrop: `
+                    rgba(106, 13, 173, 0.4) /* Fondo morado semitransparente */
+                `,
+                        confirmButtonText: 'Cerrar',
+                        confirmButtonColor: '#1a1b1c',
+                        customClass: {
+                            popup: 'swal-popup',
+                            title: 'swal-title',
+                            content: 'swal-content',
+                            confirmButton: 'swal-confirm-button'
+                        }
+                    });
+                });
+            });
+        });
         // Ocultar el GIF de carga cuando la página ha terminado de cargarse
         window.addEventListener('load', function () {
             setTimeout(function () {
